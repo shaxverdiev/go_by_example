@@ -63,7 +63,10 @@ func main() {
 		}	
 	}
 
-	twoStr := make([][]bool, 3)
+	lit := []string{"sss", "332"}
+	fmt.Println(lit)
+
+	twoStr := make([][]string, 3)
 	fmt.Println("2d: ", twoD) 
 	fmt.Println("strslice:", twoStr)
 }

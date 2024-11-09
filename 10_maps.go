@@ -25,7 +25,7 @@ func main() {
 	// delete(m, "k2")
 	// fmt.Println("map:", m)
 
-	clear(m)
+	// clear(m)
 	fmt.Println("map:", m)
 
 }

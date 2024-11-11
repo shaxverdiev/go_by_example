@@ -30,6 +30,6 @@ func main() {
     close(jobs)
 
     for a := 1; a <= numJobs; a++ {
-        <-results
+        <-results // чтение из канала (разблокировка)
     }
 }

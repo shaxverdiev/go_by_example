@@ -1,3 +1,7 @@
+// https://gobyexample.com/testing-and-benchmarking
+// go test -v
+// go test -bench=.
+
 package main
 
 import (
@@ -13,9 +17,8 @@ func IntMin(a, b int) int {
 }
 
 func TestIntMinBasic(t *testing.T) {
-    ans := IntMin(2, -2)
+    ans := IntMin(2, -3)
     if ans != -2 {
-
         t.Errorf("IntMin(2, -2) = %d; want -2", ans)
     }
 }
@@ -45,8 +48,26 @@ func TestIntMinTableDriven(t *testing.T) {
 }
 
 func BenchmarkIntMin(b *testing.B) {
-
     for i := 0; i < b.N; i++ {
         IntMin(1, 2)
     }
 }
+
+
+// 15:05:58 $ go test -v 72_testing_and_benchmarking_test.go 
+// === RUN   TestIntMinBasic
+// --- PASS: TestIntMinBasic (0.00s)
+// === RUN   TestIntMinTableDriven
+// === RUN   TestIntMinTableDriven/0,1
+// === RUN   TestIntMinTableDriven/1,0
+// === RUN   TestIntMinTableDriven/2,-2
+// === RUN   TestIntMinTableDriven/0,-1
+// === RUN   TestIntMinTableDriven/-1,0
+// --- PASS: TestIntMinTableDriven (0.00s)
+//     --- PASS: TestIntMinTableDriven/0,1 (0.00s)
+//     --- PASS: TestIntMinTableDriven/1,0 (0.00s)
+//     --- PASS: TestIntMinTableDriven/2,-2 (0.00s)
+//     --- PASS: TestIntMinTableDriven/0,-1 (0.00s)
+//     --- PASS: TestIntMinTableDriven/-1,0 (0.00s)
+// PASS
+// ok  	command-line-arguments	0.004s

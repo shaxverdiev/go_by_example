@@ -54,7 +54,8 @@ func BenchmarkIntMin(b *testing.B) {
 }
 
 
-// 15:05:58 $ go test -v 72_testing_and_benchmarking_test.go 
+// 15:05:58 $ go test -v 72_testing_and_benchmarking_test.go
+ 
 // === RUN   TestIntMinBasic
 // --- PASS: TestIntMinBasic (0.00s)
 // === RUN   TestIntMinTableDriven
